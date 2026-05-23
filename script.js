@@ -1,53 +1,53 @@
-const progressBars = document.querySelectorAll(".progress");
 
-const animateProgress = (entries, observer)=>{
-    entries.forEach((entry) => {
-     if (entry.isIntersecting) {
-        const progress = entry.target;
-        const targetWidth = progress.getAttribute("data-progress");
-        progress.style.width = targetWidth + "%";
-     } else{
-        const progress = entry.target;
-        progress.style.width = "0%"
-     }
-        
-    });
-}; 
-const observer = new IntersectionObserver(animateProgress, {
-    threshold: 0.5,
-});
-progressBars.forEach((progressBar) => {
-    observer.observe(progressBar);
-});
-
-var typed = new Typed("#element",{
-    strings: ["Java Developer", "FullStack Developer","Linux"],
-    typeSpeed: 50,
-    backSpeed: 50,
-    loop: true,
-    showCursor: false,
-});
-document
-.getElementById("contactForm")
-.addEventListener("submit", function (event){
-    event.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
-    
-    if(name === "" || email === "" || subject === "" || message === ""){
-        alert("please fill the all fileds");
-        return;
+    // Typed effect
+    const phrases = ['Building full-stack apps', 'Writing clean Java code', 'Solving real problems', 'Learning every day'];
+    let pi = 0, ci = 0, deleting = false;
+    const el = document.getElementById('typed-el');
+    function type() {
+      const cur = phrases[pi];
+      if (!deleting) {
+        el.textContent = cur.slice(0, ci + 1);
+        ci++;
+        if (ci === cur.length) { deleting = true; setTimeout(type, 1400); return; }
+      } else {
+        el.textContent = cur.slice(0, ci - 1);
+        ci--;
+        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+      }
+      setTimeout(type, deleting ? 40 : 80);
     }
-    if(!validationEmail(email)){
-        alert("please enter valid email");
+    setTimeout(type, 800);
+
+    // Intersection observer for animations
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          // Animate skill bars
+          const bar = e.target.querySelector('.bar-fill');
+          if (bar) bar.style.width = bar.dataset.w + '%';
+          // Also trigger bars in section
+          e.target.closest('section')?.querySelectorAll('.bar-fill').forEach(b => {
+            b.style.width = b.dataset.w + '%';
+          });
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+    // Also observe skills section directly for bar animation
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+      const sio = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            document.querySelectorAll('.bar-fill').forEach(b => {
+              b.style.width = b.dataset.w + '%';
+            });
+          }
+        });
+      }, { threshold: 0.2 });
+      sio.observe(skillsSection);
     }
-    alert("Message is SuccessFully send!");
-    this.reset();
-});
-function validationEmail(email){
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
+  
