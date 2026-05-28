@@ -4,21 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Akash Guduri — Java Full Stack Developer</title>
+
   <meta name="description" content="Akash Guduri Portfolio - Java Full Stack Developer" />
+
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
-<link rel="stylesheet" href="style.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- NAV -->
+  <!-- ================= NAVBAR ================= -->
+
   <header>
+
     <div class="logo">AG_PORTFOLIO</div>
+
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
@@ -28,254 +38,591 @@
         <li><a href="#skills">Skills</a></li>
       </ul>
     </nav>
+
   </header>
 
-  <!-- SOCIAL FLOAT -->
+  <!-- ================= SOCIAL FLOAT ================= -->
+
   <div class="social-float">
+
+    <!-- LINKEDIN -->
     <a href="https://www.linkedin.com/in/akash-guduri/" target="_blank" title="LinkedIn">
+
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+
         <rect x="2" y="9" width="4" height="12" />
+
         <circle cx="4" cy="4" r="2" />
+
       </svg>
+
     </a>
+
+    <!-- GITHUB -->
     <a href="https://github.com/akash1446" target="_blank" title="GitHub">
+
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
         <path
           d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+
       </svg>
+
     </a>
+
+    <!-- EMAIL -->
     <a href="mailto:akash@example.com" title="Email">
+
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+
         <polyline points="22,6 12,13 2,6" />
+
       </svg>
+
     </a>
+
   </div>
 
-  <!-- HERO -->
+  <!-- ================= HERO SECTION ================= -->
+
   <section class="hero">
+
+    <!-- LEFT -->
+
     <div class="hero-left">
-      <div class="hero-eyebrow">Available for work</div>
-      <h1>Akash <em>Guduri</em></h1>
-      <p class="hero-role">Java Full Stack Developer</p>
-      <div class="hero-typed" id="typed-el"></div>
-      <div class="btn-group">
-        <a href="Images/Akash_Guduri_JFS.docx" download class="btn btn-primary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-          </svg>
-          Download CV
-        </a>
-        <a href="#projects" class="btn btn-ghost">View Projects</a>
+
+      <div class="hero-eyebrow">
+        Available for work
       </div>
+
+      <h1>
+        Akash <em>Guduri</em>
+      </h1>
+
+      <p class="hero-role">
+        Java Full Stack Developer
+      </p>
+
+      <div class="hero-typed" id="typed-el"></div>
+
+      <div class="btn-group">
+
+        <a href="Images/Akash_Guduri_JFS.docx" download class="btn btn-primary">
+
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+
+            <polyline points="7 10 12 15 17 10" />
+
+            <line x1="12" y1="15" x2="12" y2="3" />
+
+          </svg>
+
+          Download CV
+
+        </a>
+
+        <a href="#projects" class="btn btn-ghost">
+          View Projects
+        </a>
+
+      </div>
+
     </div>
+
+    <!-- RIGHT -->
+
     <div class="hero-right">
+
       <div class="hero-img-wrap">
+
         <img src="Images/developer.jpg" alt="Developer"
           onerror="this.parentNode.innerHTML='<div class=\'hero-img-placeholder\'><span>AG</span></div>'" />
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- ABOUT -->
+  <!-- ================= ABOUT SECTION ================= -->
+
   <section id="about">
-    <div class="section-label">01 — About</div>
-    <h2 class="section-title">The person<br>behind the <em>code</em></h2>
+
+    <div class="section-label">
+      01 — About
+    </div>
+
+    <h2 class="section-title">
+      The person <br>
+      behind the <em>code</em>
+    </h2>
+
     <div class="about-grid">
+
+      <!-- IMAGE -->
+
       <div class="about-photo fade-in">
-        <img src="Images/Profile.jpg" alt="Akash Guduri"
+
+        <img src="Images/Akasim.png" alt="Akash Guduri"
           onerror="this.parentNode.innerHTML='<div class=\'about-photo-placeholder\'><span>AG</span></div>'" />
+
       </div>
+
+      <!-- CONTENT -->
+
       <div class="fade-in">
-        <p>Enthusiastic and results-driven Java Developer Fresher with strong knowledge of object-oriented programming,
-          SQL, and full-stack web technologies.</p>
-        <p>Demonstrated experience through academic and internship projects involving real-time applications and machine
-          learning.</p>
-        <p>Eager to contribute to a dynamic team and grow in the software development field by solving practical
-          problems and delivering efficient solutions.</p>
+
+        <p>
+          Enthusiastic and results-driven Java Developer Fresher with strong knowledge of object-oriented programming,
+          SQL, and full-stack web technologies.
+        </p>
+
+        <p>
+          Demonstrated experience through academic and internship projects involving real-time applications and machine
+          learning.
+        </p>
+
+        <p>
+          Eager to contribute to a dynamic team and grow in the software development field by solving practical
+          problems and delivering efficient solutions.
+        </p>
+
+        <!-- STATS -->
+
         <div class="about-stats">
+
           <div class="stat-item">
             <div class="stat-num">3+</div>
             <div class="stat-label">Projects Built</div>
           </div>
+
           <div class="stat-item">
             <div class="stat-num">7.8</div>
             <div class="stat-label">B.Tech CGPA</div>
           </div>
+
           <div class="stat-item">
             <div class="stat-num">3</div>
             <div class="stat-label">Certifications</div>
           </div>
+
           <div class="stat-item">
             <div class="stat-num">2025</div>
             <div class="stat-label">Graduated</div>
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- EDUCATION -->
+  <!-- ================= EDUCATION ================= -->
+
   <section id="education">
-    <div class="section-label">02 — Education</div>
-    <h2 class="section-title">Academic <em>Journey</em></h2>
-    <div class="edu-list">
-      <div class="edu-item fade-in">
-        <div class="edu-year">2025</div>
-        <div class="edu-content">
-          <h3>B.Tech — Computer Science Engineering</h3>
-          <p class="inst">Bhimavaram Institute Of Engineering And Technology</p>
-          <span class="edu-badge">CGPA 7.8</span>
-        </div>
-      </div>
-      <div class="edu-item fade-in">
-        <div class="edu-year">2022</div>
-        <div class="edu-content">
-          <h3>Diploma — Computer Engineering</h3>
-          <p class="inst">Swarnandhra College Of Engineering And Technology</p>
-          <span class="edu-badge">88%</span>
-        </div>
-      </div>
-      <div class="edu-item fade-in">
-        <div class="edu-year">2019</div>
-        <div class="edu-content">
-          <h3>SSC — 10th Grade</h3>
-          <p class="inst">ZPH School Mastyapuri</p>
-          <span class="edu-badge">GPA 8.0</span>
-        </div>
-      </div>
+
+    <div class="section-label">
+      02 — Education
     </div>
+
+    <h2 class="section-title">
+      Academic <em>Journey</em>
+    </h2>
+
+    <div class="edu-list">
+
+      <!-- ITEM -->
+
+      <div class="edu-item fade-in">
+
+        <div class="edu-year">2025</div>
+
+        <div class="edu-content">
+
+          <h3>
+            B.Tech — Computer Science Engineering
+          </h3>
+
+          <p class="inst">
+            Bhimavaram Institute Of Engineering And Technology
+          </p>
+
+          <span class="edu-badge">
+            CGPA 7.8
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="edu-item fade-in">
+
+        <div class="edu-year">2022</div>
+
+        <div class="edu-content">
+
+          <h3>
+            Diploma — Computer Engineering
+          </h3>
+
+          <p class="inst">
+            Swarnandhra College Of Engineering And Technology
+          </p>
+
+          <span class="edu-badge">
+            88%
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="edu-item fade-in">
+
+        <div class="edu-year">2019</div>
+
+        <div class="edu-content">
+
+          <h3>
+            SSC — 10th Grade
+          </h3>
+
+          <p class="inst">
+            ZPH School Mastyapuri
+          </p>
+
+          <span class="edu-badge">
+            GPA 8.0
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </section>
 
-  <!-- PROJECTS -->
+  <!-- ================= PROJECTS ================= -->
+
   <section id="projects">
-    <div class="section-label">03 — Work</div>
-    <h2 class="section-title">Selected <em>Projects</em></h2>
+
+    <div class="section-label">
+      03 — Work
+    </div>
+
+    <h2 class="section-title">
+      Selected <em>Projects</em>
+    </h2>
+
     <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+
       <div class="project-card fade-in">
+
         <div class="project-img">
+
           <img src="Images/My Portfolio.jpeg" alt="Portfolio"
             onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><span class=\'proj-icon\'>&#9671;</span></div>'" />
+
         </div>
+
         <div class="project-body">
-          <div class="project-num">01 / Portfolio</div>
-          <h3>Portfolio Website</h3>
-          <p>Responsive and interactive website built to showcase skills and projects with modern UI.</p>
+
+          <div class="project-num">
+            01 / Portfolio
+          </div>
+
+          <h3>
+            Portfolio Website
+          </h3>
+
+          <p>
+            Responsive and interactive website built to showcase skills and projects with modern UI.
+          </p>
+
           <div class="tech-tags">
+
             <span class="tech-tag">HTML</span>
             <span class="tech-tag">CSS</span>
             <span class="tech-tag">JavaScript</span>
+
           </div>
+
         </div>
+
       </div>
+
+      <!-- PROJECT 2 -->
+
       <div class="project-card fade-in">
+
         <div class="project-img">
-          <img src="Images/Live Detection App.jpeg" alt="Live Detection"
+
+          <img src="Images/weather.png" alt="Weather App"
             onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><span class=\'proj-icon\'>&#9671;</span></div>'" />
+
         </div>
+
         <div class="project-body">
-          <div class="project-num">02 / Security</div>
-          <h3>Behavioral Model of Live Detection For Apps Based Attack</h3>
-          <p>ML algorithms to classify behavioral patterns and improve app security against live attacks.</p>
-          <div class="tech-tags">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">Tomcat</span>
+
+          <div class="project-num">
+            02 / Weather App
           </div>
+
+          <h3>
+            Real-Time Weather Forecast Application
+          </h3>
+
+          <p>
+            Developed a responsive weather application using OpenWeather API
+            to display real-time temperature, humidity, wind speed,
+            weather conditions, and location-based forecasts.
+          </p>
+
+          <div class="tech-tags">
+
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+
+          </div>
+
         </div>
+
       </div>
+
+      <!-- PROJECT 3 -->
+
       <div class="project-card fade-in">
+
         <div class="project-img">
-          <img src="Images/Music.jpeg" alt="Music Player"
+
+          <img src="Images/FoodApp.png" alt="Food Zonie"
             onerror="this.parentNode.innerHTML='<div class=\'project-img-placeholder\'><span class=\'proj-icon\'>&#9671;</span></div>'" />
+
         </div>
+
         <div class="project-body">
-          <div class="project-num">03 / App</div>
-          <h3>Music Player</h3>
-          <p>Menu-driven console application in Java using OOP concepts with full playback control.</p>
-          <div class="tech-tags">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Eclipse IDE</span>
-            <span class="tech-tag">OOP</span>
+
+          <div class="project-num">
+            03 / Food App
           </div>
+
+          <h3>
+            Food Zonie - Online Food Ordering App
+          </h3>
+
+          <p>
+            Developed a modern food ordering web application with category-based
+            menu browsing, search functionality, cart management,
+            and responsive UI for better user experience.
+          </p>
+
+          <div class="tech-tags">
+
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">JavaScript</span>
+
+          </div>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- SKILLS -->
+  <!-- ================= SKILLS ================= -->
+
   <section id="skills">
-    <div class="section-label">04 — Skills</div>
-    <h2 class="section-title">Skills &amp; <em>Certifications</em></h2>
+
+    <div class="section-label">
+      04 — Skills
+    </div>
+
+    <h2 class="section-title">
+      Skills &amp; <em>Certifications</em>
+    </h2>
+
     <div class="skills-layout">
+
+      <!-- LEFT SIDE -->
+
       <div>
+
         <div class="skill-item fade-in">
-          <div class="skill-header"><span class="skill-name">Java</span><span class="skill-pct">90%</span></div>
+
+          <div class="skill-header">
+            <span class="skill-name">Java</span>
+            <span class="skill-pct">90%</span>
+          </div>
+
           <div class="bar-track">
             <div class="bar-fill" data-w="90"></div>
           </div>
+
         </div>
+
         <div class="skill-item fade-in">
-          <div class="skill-header"><span class="skill-name">HTML</span><span class="skill-pct">95%</span></div>
+
+          <div class="skill-header">
+            <span class="skill-name">HTML</span>
+            <span class="skill-pct">95%</span>
+          </div>
+
           <div class="bar-track">
             <div class="bar-fill" data-w="95"></div>
           </div>
+
         </div>
+
         <div class="skill-item fade-in">
-          <div class="skill-header"><span class="skill-name">CSS</span><span class="skill-pct">90%</span></div>
+
+          <div class="skill-header">
+            <span class="skill-name">CSS</span>
+            <span class="skill-pct">90%</span>
+          </div>
+
           <div class="bar-track">
             <div class="bar-fill" data-w="90"></div>
           </div>
+
         </div>
+
         <div class="skill-item fade-in">
-          <div class="skill-header"><span class="skill-name">JavaScript</span><span class="skill-pct">80%</span></div>
+
+          <div class="skill-header">
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-pct">80%</span>
+          </div>
+
           <div class="bar-track">
             <div class="bar-fill" data-w="80"></div>
           </div>
+
         </div>
+
         <div class="skill-item fade-in">
-          <div class="skill-header"><span class="skill-name">React</span><span class="skill-pct">75%</span></div>
+
+          <div class="skill-header">
+            <span class="skill-name">React</span>
+            <span class="skill-pct">75%</span>
+          </div>
+
           <div class="bar-track">
             <div class="bar-fill" data-w="75"></div>
           </div>
+
         </div>
+
+        <div class="skill-item fade-in">
+
+          <div class="skill-header">
+            <span class="skill-name">Oracle SQL</span>
+            <span class="skill-pct">80%</span>
+          </div>
+
+          <div class="bar-track">
+            <div class="bar-fill" data-w="80"></div>
+          </div>
+
+        </div>
+
       </div>
+
+      <!-- RIGHT SIDE -->
+
       <div>
+
         <div class="cert-list">
+
           <div class="cert-item fade-in">
+
             <div>
               <h4>Certified Java Developer</h4>
               <span>FLM</span>
             </div>
-            <a href="Images/java.jpg" target="_blank" class="cert-link">View ↗</a>
+
+            <a href="Images/java.jpg" target="_blank" class="cert-link">
+
+              View ↗
+
+            </a>
+
           </div>
+
           <div class="cert-item fade-in">
+
             <div>
               <h4>Certified Linux</h4>
               <span>FLM</span>
             </div>
-            <a href="Images/Linux.jpg" target="_blank" class="cert-link">View ↗</a>
+
+            <a href="Images/Linux.jpg" target="_blank" class="cert-link">
+
+              View ↗
+
+            </a>
+
           </div>
+
           <div class="cert-item fade-in">
+
             <div>
               <h4>Certified SQL Developer</h4>
               <span>BlackBucks</span>
             </div>
-            <a href="Images/SQL.png" target="_blank" class="cert-link">View ↗</a>
+
+            <a href="Images/SQL.png" target="_blank" class="cert-link">
+
+              View ↗
+
+            </a>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
+
   <footer>
-    <p>© 2026 Akash Guduri — All Rights Reserved</p>
-    <a href="mailto:akash@example.com">akash@example.com</a>
+
+    <p>
+      © 2026 Akash Guduri — All Rights Reserved
+    </p>
+
+    <a href="mailto:akash@example.com">
+      akash@example.com
+    </a>
+
   </footer>
-<script src="script.js"></script>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
 </body>
+
 </html>
