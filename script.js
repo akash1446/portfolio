@@ -7,6 +7,7 @@ const focus = [
   "Object-Oriented Programming",
   "Spring Core",
   "Spring Boot",
+  "Microservices",
   "SQL",
   "React",
   "Full Stack Development",
@@ -20,6 +21,7 @@ const skills = [
   ["React", 75],
   ["Oracle SQL", 80],
   ["Spring Boot With AI", 90],
+  ["Microservices with AI", 60],
   ["Linux", 70],
 ];
 const moreSkills = ["JDBC", "Hibernate", "Git & GitHub"];
