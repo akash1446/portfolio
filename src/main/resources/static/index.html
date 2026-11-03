@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Akash Guduri — Java Full Stack Developer</title>
+  <meta name="description" content="Akash Guduri Portfolio - Java Full Stack Developer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="loader">
+    <div class="ld-logo"></div>
+    <div class="ld-bar"><i></i></div>
+  </div>
+  <div class="wallpaper" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- MENU BAR -->
+  <header class="menubar">
+    <div class="mb-left">
+      <span class="apple"></span>
+      <b>Akash Guduri</b>
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </div>
+    <div class="mb-right">
+      <button id="theme" aria-label="Toggle dark and light mode">◐</button>
+      <span id="clock"></span>
+    </div>
+  </header>
+
+  <!-- SOCIAL FLOAT (kept) -->
+  <div class="social-float">
+    <a href="https://www.linkedin.com/in/akash-guduri/" target="_blank" rel="noopener" title="LinkedIn"
+      aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+    </a>
+    <a href="https://github.com/akash1446" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path
+          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+      </svg>
+    </a>
+    <a href="mailto:akashguduri2@gmail.com" title="Email" aria-label="Email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="22,6 12,13 2,6" />
+      </svg>
+    </a>
+  </div>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="win hero">
+      <div class="tb"><i class="r"></i><i class="y"></i><i class="g"></i><span>Home — Akash Guduri</span></div>
+      <div class="wb hero-grid">
+        <div class="hero-left">
+          <div class="pill"><i class="dot"></i>Available for work</div>
+          <h1>Akash Guduri</h1>
+          <p class="hero-role">Java Developer | Full Stack Developer</p>
+          <div class="hero-typed" id="typed-el"></div>
+          <p class="lead">Fresher Java developer with a strong grounding in object-oriented programming, SQL, and
+            full-stack web technologies. I build real-time applications and turn practical problems into efficient
+            solutions.</p>
+          <div class="btn-group">
+            <a href="#contact" class="btn btn-ghost">Contact me</a>
+            <a href="#projects" class="btn btn-ghost">View projects</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="widget w-clock"><b id="w-time"></b><small id="w-date"></small></div>
+          <div class="widget w-stack"><small>Stack</small><b>Java · Spring Boot · React</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="win">
+      <div class="tb"><i class="r"></i><i class="y"></i><i class="g"></i><span>About — Finder</span></div>
+      <div class="wb about-grid">
+        <div class="about-side fade-in">
+          <div class="about-photo">
+            <img src="Images/Akasim.png" alt="Akash Guduri"
+              onerror="this.parentNode.innerHTML='<div class=\'ph\'><span>AG</span></div>'" />
+          </div>
+          <a href="Images/Akash_Guduri_JFS.docx" download class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download CV
+          </a>
+        </div>
+        <div class="fade-in">
+          <h2 class="title">The person behind the code</h2>
+          <p>Enthusiastic and results-driven Java Developer Fresher with strong knowledge of object-oriented
+            programming, SQL, and full-stack web technologies.</p>
+          <p>Demonstrated experience through academic and internship projects involving real-time applications and
+            machine learning.</p>
+          <p>Eager to contribute to a dynamic team and grow in the software development field by solving practical
+            problems and delivering efficient solutions.</p>
+          <div class="chips" id="focus"></div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-num">3+</div>
+              <div class="stat-label">Projects built</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">7.8</div>
+              <div class="stat-label">B.Tech CGPA</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">3</div>
+              <div class="stat-label">Certifications</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">2025</div>
+              <div class="stat-label">Graduated</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="win">
+      <div class="tb"><i class="r"></i><i class="y"></i><i class="g"></i><span>Skills — Activity Monitor</span></div>
+      <div class="wb">
+        <h2 class="title">Technical skills</h2>
+        <div class="skills-grid" id="skill-list"></div>
+        <p class="sub">Also working with</p>
+        <div class="chips" id="more-skills"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="win">
+      <div class="tb"><i class="r"></i><i class="y"></i><i class="g"></i><span>Projects — Xcode</span></div>
+      <div class="wb">
+        <h2 class="title">Selected projects</h2>
+        <div class="projects-grid" id="project-list"></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="win">
+      <div class="tb"><i class="r"></i><i class="y"></i><i class="g"></i><span>Experience — Notes</span></div>
+      <div class="wb">
+        <h2 class="title">Internship</h2>
+        <div class="card fade-in">
+          <h3>Content Quality Intern</h3>
+          <p class="inst">Frontlines EduTech Internship · 25 Aug 2026 – 31 Oct 2026</p>
+          <ul class="points">
+            <li>Checked recorded training videos for content quality.</li>
+            <li>Edited videos by cutting and removing unnecessary portions.</li>
+            <li>Tracked editing and quality-check status in Excel sheets.</li>
+            <li>Uploaded verified, well-organised videos to the learning portal.</li>
+            <li>Researched new trending courses for the learning platform.</li>
+          </ul>
+          <div class="chips"><span class="chip">Content quality</span><span class="chip">Video editing</span><span
+              class="chip">Excel</span><span class="chip">Research</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="win">
+      <div class="tb"><i class="r"></i><i class="y"></i><i class="g"></i><span>Certifications — Preview</span></div>
+      <div class="wb">
+        <h2 class="title">Certifications</h2>
+        <div class="cert-list" id="cert-list"></div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="win">
+      <div class="tb"><i class="r"></i><i class="y"></i><i class="g"></i><span>Education — Calendar</span></div>
+      <div class="wb">
+        <h2 class="title">Academic journey</h2>
+        <div class="edu-list">
+          <div class="edu-item fade-in">
+            <div class="edu-year">2025</div>
+            <div>
+              <h3>B.Tech — Computer Science Engineering</h3>
+              <p class="inst">Bhimavaram Institute Of Engineering And Technology</p><span class="chip">CGPA 7.8</span>
+            </div>
+          </div>
+          <div class="edu-item fade-in">
+            <div class="edu-year">2022</div>
+            <div>
+              <h3>Diploma — Computer Engineering</h3>
+              <p class="inst">Swarnandhra College Of Engineering And Technology</p><span class="chip">88%</span>
+            </div>
+          </div>
+          <div class="edu-item fade-in">
+            <div class="edu-year">2019</div>
+            <div>
+              <h3>SSC — 10th Grade</h3>
+              <p class="inst">ZPH School Mastyapuri</p><span class="chip">GPA 8.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="win">
+      <div class="tb"><i class="r"></i><i class="y"></i><i class="g"></i><span>Contact — Mail</span></div>
+      <div class="wb contact-grid">
+        <div>
+          <h2 class="title">Let’s work together</h2>
+          <p>Open to Java and full-stack developer roles. Send a message and I’ll reply by email.</p>
+          <ul class="contact-list">
+            <li><span>Email</span><a href="mailto:akashguduri2@gmail.com">akashguduri2@gmail.com</a></li>
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/akash-guduri/" target="_blank"
+                rel="noopener">akash-guduri</a></li>
+            <li><span>GitHub</span><a href="https://github.com/akash1446" target="_blank" rel="noopener">akash1446</a>
+            </li>
+            <li><span>Location</span><b>India</b></li>
+          </ul>
+          <a id="wa-btn" class="btn" target="_blank" rel="noopener" hidden>Chat on WhatsApp</a>
+        </div>
+        <form id="contact-form" class="form">
+          <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <label>Name<input name="name" required autocomplete="name" /></label>
+          <label>Email<input name="email" type="email" required autocomplete="email" /></label>
+          <label>Message<textarea name="msg" rows="4" required></textarea></label>
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <small id="form-note"></small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Akash Guduri — All Rights Reserved</footer>
+
+  <!-- DOCK -->
+  <nav class="dock" id="dock" aria-label="Main navigation"></nav>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

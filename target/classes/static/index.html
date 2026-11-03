@@ -72,23 +72,11 @@
             full-stack web technologies. I build real-time applications and turn practical problems into efficient
             solutions.</p>
           <div class="btn-group">
-            <a href="Images/Akash_Guduri_JFS.docx" download class="btn btn-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              Download CV
-            </a>
             <a href="#contact" class="btn btn-ghost">Contact me</a>
             <a href="#projects" class="btn btn-ghost">View projects</a>
           </div>
         </div>
         <div class="hero-right">
-          <div class="hero-img-wrap">
-            <img src="Images/developer.jpg" alt="Akash Guduri"
-              onerror="this.parentNode.innerHTML='<div class=\'ph\'><span>AG</span></div>'" />
-          </div>
           <div class="widget w-clock"><b id="w-time"></b><small id="w-date"></small></div>
           <div class="widget w-stack"><small>Stack</small><b>Java · Spring Boot · React</b></div>
         </div>
@@ -99,9 +87,19 @@
     <section id="about" class="win">
       <div class="tb"><i class="r"></i><i class="y"></i><i class="g"></i><span>About — Finder</span></div>
       <div class="wb about-grid">
-        <div class="about-photo fade-in">
-          <img src="Images/Akasim.png" alt="Akash Guduri"
-            onerror="this.parentNode.innerHTML='<div class=\'ph\'><span>AG</span></div>'" />
+        <div class="about-side fade-in">
+          <div class="about-photo">
+            <img src="Images/Akasim.png" alt="Akash Guduri"
+              onerror="this.parentNode.innerHTML='<div class=\'ph\'><span>AG</span></div>'" />
+          </div>
+          <a href="Images/Akash_Guduri_JFS.docx" download class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download CV
+          </a>
         </div>
         <div class="fade-in">
           <h2 class="title">The person behind the code</h2>
@@ -171,7 +169,6 @@
           </ul>
           <div class="chips"><span class="chip">Content quality</span><span class="chip">Video editing</span><span
               class="chip">Excel</span><span class="chip">Research</span></div>
-          <!-- TODO: add the company name next to the role when you want it shown -->
         </div>
       </div>
     </section>
@@ -231,8 +228,10 @@
             </li>
             <li><span>Location</span><b>India</b></li>
           </ul>
+          <a id="wa-btn" class="btn" target="_blank" rel="noopener" hidden>Chat on WhatsApp</a>
         </div>
         <form id="contact-form" class="form">
+          <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <label>Name<input name="name" required autocomplete="name" /></label>
           <label>Email<input name="email" type="email" required autocomplete="email" /></label>
           <label>Message<textarea name="msg" rows="4" required></textarea></label>

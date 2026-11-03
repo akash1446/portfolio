@@ -7,7 +7,6 @@ const focus = [
   "Object-Oriented Programming",
   "Spring Core",
   "Spring Boot",
-  "Microservices",
   "SQL",
   "React",
   "Full Stack Development",
@@ -21,7 +20,6 @@ const skills = [
   ["React", 75],
   ["Oracle SQL", 80],
   ["Spring Boot With AI", 90],
-  ["Microservices with AI", 60],
   ["Linux", 70],
 ];
 const moreSkills = ["JDBC", "Hibernate", "Git & GitHub"];
@@ -256,13 +254,41 @@ dockItems.forEach(([id]) => {
   if (s) spy.observe(s);
 });
 
-/* ---------- CONTACT FORM (opens your email app; no backend needed) ---------- */
-$("#contact-form").addEventListener("submit", (e) => {
+/* ---------- CONTACT FORM -> Spring Boot API -> database + email ---------- */
+const API_BASE = ""; // '' = same server (http://localhost:8080). Use 'http://localhost:8080' with Live Server.
+const WHATSAPP_NUMBER = ""; // country code + number, digits only, e.g. '919876543210'
+
+const waBtn = $("#wa-btn");
+if (WHATSAPP_NUMBER) {
+  waBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Akash, I saw your portfolio and would like to connect.")}`;
+  waBtn.hidden = false;
+}
+
+$("#contact-form").addEventListener("submit", async (e) => {
   e.preventDefault();
-  const f = new FormData(e.target);
-  const body = `${f.get("msg")}\n\n— ${f.get("name")} (${f.get("email")})`;
-  location.href = `mailto:akash@example.com?subject=${encodeURIComponent("Portfolio message from " + f.get("name"))}&body=${encodeURIComponent(body)}`;
-  $("#form-note").textContent = "Opening your email app…";
+  const form = e.target,
+    note = $("#form-note"),
+    btn = form.querySelector("button");
+  const f = Object.fromEntries(new FormData(form));
+  btn.disabled = true;
+  note.className = "";
+  note.textContent = "Sending…";
+  try {
+    const res = await fetch(`${API_BASE}/api/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(f),
+    });
+    if (!res.ok) throw new Error(res.status);
+    form.reset();
+    note.textContent = "Thanks! Your message was sent. I’ll reply soon.";
+  } catch (err) {
+    note.className = "err";
+    note.textContent =
+      "Could not send right now. Please email me directly or try again.";
+  } finally {
+    btn.disabled = false;
+  }
 });
 
 /* ---------- LOADER ---------- */
