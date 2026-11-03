@@ -3,7 +3,7 @@ cd /d "%~dp0"
 
 rem ---- EDIT these two lines with your real values (no < > brackets) ----
 set "DB_PASS=your-mysql-password"
-set "MAIL_PASS=your-8-letter-app-password"
+set "MAIL_PASS=your-16-letter-app-password"
 rem ----------------------------------------------------------------------
 
 rem Find Java automatically from javac on your PATH

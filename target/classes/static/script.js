@@ -40,7 +40,7 @@ const projects = [
     alt: "Weather App",
     title: "Real-Time Weather Forecast Application",
     repo: GH,
-    demo: "",
+    demo: "https://weather-project-one-zeta.vercel.app/",
     desc: "Developed a responsive weather application using OpenWeather API to display real-time temperature, humidity, wind speed, weather conditions, and location-based forecasts.",
     tech: ["HTML", "CSS", "JavaScript"],
   },
@@ -99,7 +99,7 @@ $("#project-list").innerHTML = projects
     (p) => `
   <article class="project-card fade-in">
     <div class="tb"><i class="r"></i><i class="y"></i><i class="g"></i><span>${esc(p.alt)}</span></div>
-    <div class="project-img"><img src="${esc(p.img)}" alt="${esc(p.alt)}" loading="lazy" onerror="this.remove()" /></div>
+    <div class="project-img">${p.demo ? `<a href="${esc(p.demo)}" target="_blank" rel="noopener">` : ""}<img src="${esc(p.img)}" alt="${esc(p.alt)}" loading="lazy" onerror="this.remove()" />${p.demo ? "</a>" : ""}</div>
     <div class="project-body">
       <h3>${esc(p.title)}</h3>
       <p>${esc(p.desc)}</p>
@@ -269,7 +269,13 @@ $("#contact-form").addEventListener("submit", async (e) => {
   const form = e.target,
     note = $("#form-note"),
     btn = form.querySelector("button");
-  const f = Object.fromEntries(new FormData(form));
+  const d = Object.fromEntries(new FormData(form));
+  const f = {
+    name: d.name,
+    email: d.email,
+    message: d.message || d.msg,
+    website: d.website,
+  };
   btn.disabled = true;
   note.className = "";
   note.textContent = "Sending…";

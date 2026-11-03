@@ -33,6 +33,7 @@ public class MailService {
             m.setSubject("Portfolio message from " + r.name().replaceAll("[\\r\\n]", " "));
             m.setText("Name: " + r.name() + "\nEmail: " + r.email() + "\n\n" + r.message());
             sender.send(m);
+            log.info("Email SENT to {}", to);
         } catch (Exception e) {
             log.error("Email failed (message is still saved in the database): {}", e.getMessage());
         }

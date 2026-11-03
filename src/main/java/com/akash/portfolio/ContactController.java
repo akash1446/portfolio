@@ -1,5 +1,6 @@
 package com.akash.portfolio;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import java.util.Map;
@@ -15,7 +16,7 @@ public class ContactController {
     public record ContactRequest(
         @NotBlank @Size(max = 100) String name,
         @NotBlank @Email @Size(max = 150) String email,
-        @NotBlank @Size(max = 2000) String message,
+        @JsonAlias({"msg", "text"}) @NotBlank @Size(max = 2000) String message,   // also accepts the old field name "msg"
         String website) {}   // "website" is a hidden honeypot field: real people leave it empty
 
     private final ContactRepository repo;
