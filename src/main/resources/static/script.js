@@ -30,7 +30,7 @@ const projects = [
     img: "Images/My Portfolio.jpeg",
     alt: "Portfolio",
     title: "Portfolio Website",
-    repo: GH,
+    repo: "https://github.com/akash1446/portfolio",
     demo: "",
     desc: "Responsive and interactive website built to showcase skills and projects with modern UI.",
     tech: ["HTML", "CSS", "JavaScript"],
@@ -39,26 +39,34 @@ const projects = [
     img: "Images/weather.png",
     alt: "Weather App",
     title: "Real-Time Weather Forecast Application",
-    repo: GH,
+    repo: "https://github.com/akash1446/Weather-Project",
     demo: "https://weather-project-one-zeta.vercel.app/",
     desc: "Developed a responsive weather application using OpenWeather API to display real-time temperature, humidity, wind speed, weather conditions, and location-based forecasts.",
     tech: ["HTML", "CSS", "JavaScript"],
   },
   {
-    img: "Images/FoodApp.png",
-    alt: "Food Zonie",
-    title: "Food Zonie - Online Food Ordering App",
+    img: "Images/Education-ims.png",
+    alt: "Education-IMS",
+    title: "Education-IMS - Educational Management System",
     repo: GH,
-    demo: "",
-    desc: "Developed a modern food ordering web application with category-based menu browsing, search functionality, cart management, and responsive UI for better user experience.",
-    tech: ["HTML", "CSS", "React", "JavaScript"],
+    demo: "https://education-ims.vercel.app/",
+    desc: "Full-stack educational management system built with a React.js frontend, a Spring Boot backend and a MySQL database.",
+    tech: ["React.js", "Spring Boot", "MySQL"],
   },
 ];
 
+// Certificates: files are inside static/Images (jpg / png / pdf all open in a new tab).
+// File name + extension must match exactly (Linux.jpg is not linux.jpg on Vercel).
+// You can also paste a Google Drive link ("Anyone with the link can view").
 const certs = [
   ["Certified Java Developer", "FLM", "Images/java.jpg"],
   ["Certified Linux", "FLM", "Images/Linux.jpg"],
   ["Certified SQL Developer", "BlackBucks", "Images/SQL.png"],
+  [
+    "Content quality internship role",
+    "Frontlines EduTech",
+    "Images/internship certificate.jpg",
+  ],
 ];
 
 const dockItems = [
@@ -113,14 +121,16 @@ $("#project-list").innerHTML = projects
   )
   .join("");
 
+// Certificates: "View" button shows only when a real link/file path is given.
+// encodeURI makes file names with spaces work too.
 $("#cert-list").innerHTML = certs
-  .map(
-    ([n, by, href]) => `
-  <div class="cert-item fade-in">
-    <div><h4>${esc(n)}</h4><span>${esc(by)}</span></div>
-    <a href="${esc(href)}" target="_blank" rel="noopener" class="cert-link">View ↗</a>
-  </div>`,
-  )
+  .map(([n, by, href]) => {
+    const inner = `<div><h4>${esc(n)}</h4><span>${esc(by)}</span></div>`;
+    // Whole card is the link: click anywhere on it to open the certificate (no "View" text).
+    return href
+      ? `<a class="cert-item fade-in" href="${esc(encodeURI(href))}" target="_blank" rel="noopener" style="display:flex;text-decoration:none;color:inherit;cursor:pointer">${inner}</a>`
+      : `<div class="cert-item fade-in">${inner}</div>`;
+  })
   .join("");
 
 $("#dock").innerHTML = dockItems
@@ -254,8 +264,12 @@ dockItems.forEach(([id]) => {
   if (s) spy.observe(s);
 });
 
-/* ---------- CONTACT FORM -> Spring Boot API -> database + email ---------- */
-const API_BASE = ""; // '' = same server (http://localhost:8080). Use 'http://localhost:8080' with Live Server.
+/* ---------- CONTACT FORM (no server needed) ---------- */
+// 1) Create a free form at formspree.io and paste its address here, e.g. 'https://formspree.io/f/abcdwxyz'
+//    Messages are emailed to you AND kept in your Formspree dashboard.
+// 2) If this is left empty, the form opens the visitor's email app instead.
+const FORM_ENDPOINT = "https://formspree.io/f/xrppddvr";
+const MY_EMAIL = "akashguduri2@gmail.com";
 const WHATSAPP_NUMBER = ""; // country code + number, digits only, e.g. '919876543210'
 
 const waBtn = $("#wa-btn");
@@ -270,19 +284,30 @@ $("#contact-form").addEventListener("submit", async (e) => {
     note = $("#form-note"),
     btn = form.querySelector("button");
   const d = Object.fromEntries(new FormData(form));
-  const f = {
-    name: d.name,
-    email: d.email,
-    message: d.message || d.msg,
-    website: d.website,
-  };
+  const f = { name: d.name, email: d.email, message: d.message || d.msg };
+  if (d.website) {
+    form.reset();
+    return;
+  } // hidden spam-trap field was filled: ignore bots
+
+  if (!FORM_ENDPOINT) {
+    // fallback: open the email app
+    const body = `${f.message}\n\n— ${f.name} (${f.email})`;
+    location.href = `mailto:${MY_EMAIL}?subject=${encodeURIComponent("Portfolio message from " + f.name)}&body=${encodeURIComponent(body)}`;
+    note.className = "";
+    note.textContent = "Opening your email app…";
+    return;
+  }
   btn.disabled = true;
   note.className = "";
   note.textContent = "Sending…";
   try {
-    const res = await fetch(`${API_BASE}/api/contact`, {
+    const res = await fetch(FORM_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify(f),
     });
     if (!res.ok) throw new Error(res.status);
