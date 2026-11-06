@@ -31,7 +31,7 @@ const projects = [
     alt: "Portfolio",
     title: "Portfolio Website",
     repo: "https://github.com/akash1446/portfolio",
-    demo: "",
+    demo: "https://portfolio-git-main-anusakas-projects.vercel.app/",
     desc: "Responsive and interactive website built to showcase skills and projects with modern UI.",
     tech: ["HTML", "CSS", "JavaScript"],
   },
@@ -51,7 +51,7 @@ const projects = [
     repo: GH,
     demo: "https://education-ims.vercel.app/",
     desc: "Full-stack educational management system built with a React.js frontend, a Spring Boot backend and a MySQL database.",
-    tech: ["React.js", "Spring Boot", "MySQL"]
+    tech: ["React.js", "Spring Boot", "MySQL"],
   },
 ];
 
