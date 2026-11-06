@@ -51,7 +51,7 @@ const projects = [
     repo: GH,
     demo: "https://education-ims.vercel.app/",
     desc: "Full-stack educational management system built with a React.js frontend, a Spring Boot backend and a MySQL database.",
-    tech: ["React.js", "Spring Boot", "MySQL"],
+    tech: ["React.js", "Spring Boot", "MySQL"]
   },
 ];
 
